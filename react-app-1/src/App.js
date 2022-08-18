@@ -1,5 +1,10 @@
 import React from 'react'
-import "./index.css";
+import Counter from './components/Counter'
+import NameForm from './components/NameForm'
+import TodoInput from './components/Todoinput'
+import TodoList from './components/TodoList'
+import Navbar from './components/Navbar'
+import './index.css'
 
 class App extends React.Component {
   constructor() {
@@ -26,12 +31,21 @@ class App extends React.Component {
     }
 
     return (
-      <div className="counter">
-        <h1>{this.state.counter}</h1>
-        {/* arrow function everytime */}
-        <button onClick={incrementCounter}>Increment</button>
-        <button onClick={decrementCounter}>Decrement </button>
-      </div>
+      <>
+        <Counter 
+        counterCounter={this.state.counter}
+        incrementCounter={incrementCounter}
+        decrementCounter={decrementCounter}
+        />
+        <br></br>
+        <Navbar counter={this.state.counter}/>
+        <br></br>
+        <NameForm />
+        <br></br>
+        <TodoInput />
+        <br></br>
+        <TodoList />
+      </>
     )
   }
 }
