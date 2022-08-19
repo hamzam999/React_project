@@ -4,6 +4,7 @@ import NameForm from './components/NameForm'
 import TodoInput from './components/Todoinput'
 import TodoList from './components/TodoList'
 import Navbar from './components/Navbar'
+import Welcome from './components/Welcome'
 import './index.css'
 
 class App extends React.Component {
@@ -32,19 +33,21 @@ class App extends React.Component {
 
     return (
       <>
-        <Counter 
-        counterCounter={this.state.counter}
-        incrementCounter={incrementCounter}
-        decrementCounter={decrementCounter}
+        <Counter
+          counterCounter={this.state.counter}
+          incrementCounter={incrementCounter}
+          decrementCounter={decrementCounter}
         />
         <br></br>
-        <Navbar counter={this.state.counter}/>
+        <Navbar counter={this.state.counter} />
         <br></br>
         <NameForm />
         <br></br>
         <TodoInput />
         <br></br>
         <TodoList />
+        <br></br>
+        <Welcome name="Hamza" />
       </>
     )
   }
