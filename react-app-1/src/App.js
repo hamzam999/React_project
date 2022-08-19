@@ -5,6 +5,7 @@ import TodoInput from './components/Todoinput'
 import TodoList from './components/TodoList'
 import Navbar from './components/Navbar'
 import Welcome from './components/Welcome'
+import { v4 as uuid } from 'uuid'
 import './index.css'
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
     this.state = {
       //key: value pairs
       counter: 0,
+      todos: [],
     }
   }
 
@@ -23,12 +25,30 @@ class App extends React.Component {
         counter: this.state.counter + 1,
       })
     }
-
     const decrementCounter = () => {
       if (this.state.counter > 0)
         this.setState({
           counter: this.state.counter - 1,
         })
+    }
+
+    const addTodo = (value) => {
+      const newTodo = {
+        id: uuid(),
+        completed: false,
+        title: value,
+      }
+      const updatedArray = [...this.state.todos, newTodo]
+      this.setState({
+        todos: updatedArray,
+      })
+    }
+
+    const deleteTodo = (todoId) => {
+      const updatedArray = this.state.todos.filter((todo) => todo.id !== todoId)
+      this.setState({
+        todos: updatedArray,
+      })
     }
 
     return (
@@ -43,9 +63,9 @@ class App extends React.Component {
         <br></br>
         <NameForm />
         <br></br>
-        <TodoInput />
+        <TodoInput addTodo={addTodo} />
         <br></br>
-        <TodoList />
+        <TodoList todos={this.state.todos} deleteTodo={deleteTodo} />
         <br></br>
         <Welcome name="Hamza" />
       </>

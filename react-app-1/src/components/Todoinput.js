@@ -14,8 +14,16 @@ class TodoInput extends React.Component {
         todo: e.target.value,
       })
     }
+    const addTodoToList = (e) => {
+      e.preventDefault()
+      this.props.addTodo(this.state.todo)
+      this.setState({
+        todo: '',
+      })
+    }
+
     return (
-      <form>
+      <form onSubmit={addTodoToList}>
         <input
           placeholder="Enter the task"
           value={this.state.todo}

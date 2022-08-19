@@ -23,9 +23,19 @@ class TodoList extends React.Component {
     return (
       <>
         <ul>
-          {todos.map((todo) => (
-            <li key={todo.id}>{todo.title}</li>
-          ))}{' '}
+          {this.props.todos.map((todo) => (
+            <li key={todo.id}>
+              {todo.title}
+              <button
+                onClick={() => {
+                  this.props.deleteTodo(todo.id)
+                }}
+              >
+                Delete
+              </button>
+              <button>Mark as Complete</button>
+            </li>
+          ))}
         </ul>
       </>
     )
