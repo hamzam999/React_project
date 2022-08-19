@@ -2,7 +2,7 @@ import React from 'react'
 
 class Counter extends React.Component {
   render() {
-    console.log('props ', this.props, typeof this.props)
+    // console.log('props ', this.props, typeof this.props)
 
     return (
       <div class="counter">
@@ -16,3 +16,4 @@ class Counter extends React.Component {
 }
 
 export default Counter
+ 
