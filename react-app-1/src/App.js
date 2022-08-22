@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import Welcome from './components/Welcome'
 import { v4 as uuid } from 'uuid'
 import EventHandlerTwo from './components/EventHandlerTwo'
+import ToggleParagrah from './components/ToggleParagraph'
+import ToggleTheme from './components/ToggleTheme'
 import './index.css'
 
 class App extends React.Component {
@@ -71,6 +73,11 @@ class App extends React.Component {
         <Welcome name="Hamza" />
         <br></br>
         <EventHandlerTwo />
+        <br></br>
+        <ToggleParagrah />
+        <br></br>
+        <br></br>
+        <ToggleTheme />
       </>
     )
   }
