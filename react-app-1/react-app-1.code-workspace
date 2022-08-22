@@ -1,8 +1,11 @@
 {
 	"folders": [
-		{
-			"path": "."
-		}
-	],
+    {
+      "path": "."
+    },
+    {
+      "path": "..\\..\\Newton\\contest 20-08-22"
+    }
+  ],
 	"settings": {}
 }

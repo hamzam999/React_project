@@ -6,6 +6,7 @@ import TodoList from './components/TodoList'
 import Navbar from './components/Navbar'
 import Welcome from './components/Welcome'
 import { v4 as uuid } from 'uuid'
+import EventHandlerTwo from './components/EventHandlerTwo'
 import './index.css'
 
 class App extends React.Component {
@@ -68,6 +69,8 @@ class App extends React.Component {
         <TodoList todos={this.state.todos} deleteTodo={deleteTodo} />
         <br></br>
         <Welcome name="Hamza" />
+        <br></br>
+        <EventHandlerTwo />
       </>
     )
   }
