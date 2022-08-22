@@ -2,19 +2,18 @@ import React from 'react'
 
 const todos = [
   {
-    id: 1,
-    title: 'Hit The Gym',
-    completed: false,
+    relativeList: 'person one',
+    
   },
   {
-    id: 2,
-    title: 'Clean Your Room',
-    completed: false,
+    
+    relativeList: 'person two',
+    
   },
   {
-    id: 3,
-    title: 'Complete Your Homework',
-    completed: false,
+    
+    relativeList: 'person three',
+    
   },
 ]
 
