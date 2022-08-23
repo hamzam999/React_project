@@ -1,10 +1,13 @@
 {
 	"folders": [
     {
-      "path": "."
+      "path": "..\\..\\Newton\\contest 20-08-22"
     },
     {
-      "path": "..\\..\\Newton\\contest 20-08-22"
+      "path": "..\\..\\Newton\\React_assignments"
+    },
+    {
+      "path": ".."
     }
   ],
 	"settings": {}

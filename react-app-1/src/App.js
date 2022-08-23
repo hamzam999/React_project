@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.css'
 import Counter from './components/Counter'
 import NameForm from './components/NameForm'
 import TodoInput from './components/Todoinput'
@@ -9,7 +10,8 @@ import { v4 as uuid } from 'uuid'
 import EventHandlerTwo from './components/EventHandlerTwo'
 import ToggleParagrah from './components/ToggleParagraph'
 import ToggleTheme from './components/ToggleTheme'
-import './index.css'
+import Photos from './components/Photos'
+
 
 class App extends React.Component {
   constructor() {
@@ -78,6 +80,9 @@ class App extends React.Component {
         <br></br>
         <br></br>
         <ToggleTheme />
+        <br></br>
+        <br></br>
+        <Photos />
       </>
     )
   }
