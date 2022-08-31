@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Counter from './components/Counter'
+import Form from './components/Form'
+import Clock from './components/Clock'
+import Images from './components/Images'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +20,16 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Counter />
+      <br></br>
+      <Form />
+      <br></br>
+      <Clock />
+      <br></br>
+      <Images />
     </div>
   )
 }
 
-export default App;
+export default App

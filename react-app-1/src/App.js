@@ -20,7 +20,7 @@ class App extends React.Component {
     this.state = {
       //key: value pairs
       counter: 0,
-      todos: [],
+      todos: [], 
     }
   }
 
