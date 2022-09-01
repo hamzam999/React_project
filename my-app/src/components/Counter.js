@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
+
+
 function Counter() {
   let [val, setval] = useState(0)
+
   console.log([val, setval])
+
   function increment() {
     setval(val + 1)
   }
@@ -10,6 +14,7 @@ function Counter() {
       setval(val - 1)
     }
   }
+
   return (
     <div className="App">
       <h1>{val}</h1>
