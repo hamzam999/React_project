@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 
 function Counter() {
   let [val, setval] = useState(0)
@@ -20,6 +20,10 @@ function Counter() {
       <h1>{val}</h1>
       <button onClick={increment}>increment</button>
       <button onClick={decrement}>decrement</button>
+      <br></br>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </div>
   )
 }

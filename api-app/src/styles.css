@@ -1,0 +1,12 @@
+.airline-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .airline-logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const UserDetails = (props) => {
   const [userDetails, setUserDetails] = useState(null)
@@ -14,7 +14,11 @@ const UserDetails = (props) => {
   }, [])
 
   if (!userDetails) {
-    return <></>
+    return (
+      <>
+        <span>No user found</span>
+      </>
+    )
   }
 
   return (
@@ -22,6 +26,9 @@ const UserDetails = (props) => {
       <h1>User Details:</h1>
       <div>Id is {userDetails.id}</div>
       <div>Name is {userDetails.name}</div>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </div>
   )
 }

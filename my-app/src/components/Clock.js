@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Clock() {
   const [date, setDate] = useState(new Date())
@@ -25,9 +26,14 @@ function Clock() {
   //only execute this useEffect
   //Second Argument is depency array
   return (
-    <h1>
-      {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}
-    </h1>
+    <div>
+      <h1>
+        {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}
+      </h1>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
+    </div>
   )
 }
 

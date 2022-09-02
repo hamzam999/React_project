@@ -14,6 +14,9 @@ const Users = (props) => {
           </div>
         )
       })}
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </div>
   )
 }

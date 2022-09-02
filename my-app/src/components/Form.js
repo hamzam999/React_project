@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Form() {
   const [name, setName] = useState('')
@@ -32,6 +33,10 @@ function Form() {
         <button type="submit">Submit Form</button>
       </form>
       {formSubmitted ? <h1>Hey, your name is {name}</h1> : null}
+      <br></br>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </>
   )
 }

@@ -7,6 +7,7 @@ import Images from './components/Images'
 import PageNotFound from './components/PageNotFound'
 import Users from './components/User'
 import UserDetails from './components/UserDetails'
+import Homepage from './components/Homepage'
 
 function App() {
   const users = [
@@ -32,6 +33,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/" element={<Homepage />}></Route>
           <Route path="/clock" element={<Clock />}></Route>
           <Route path="/counter" element={<Counter />}></Route>
           <Route path="/form" element={<Form />}></Route>

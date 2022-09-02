@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Images() {
   const [photos, setPhotos] = useState([])
@@ -48,6 +49,10 @@ function Images() {
         value={searchValue}
         onChange={handleSearchChange}
       />
+      <br></br>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       {filteredPhotos.map((photo) => {
         return (
           <div key={photo.id} style={{ marginTop: 10 }}>

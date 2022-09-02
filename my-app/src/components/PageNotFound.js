@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function PageNotFound() {
   let val = 'Page not found!!'
@@ -6,6 +7,10 @@ function PageNotFound() {
   return (
     <div className="App">
       <h1>{val}</h1>
+      <br></br>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </div>
   )
 }
