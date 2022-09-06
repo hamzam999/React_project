@@ -7,7 +7,7 @@ function Passenger() {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://api.instantwebtools.net/v1/passenger/?page=1')
+    fetch('https://api.instantwebtools.net/v1/passenger?page=1&size=10')
       .then((res) => res.json())
       .then((response) => {
         setPassengers(response)
