@@ -1,21 +1,39 @@
 import { useEffect, useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 function Users() {
   const [loading, setLoading] = useState(false)
   const [allData, setAllData] = useState({})
+  let queryParams = new URLSearchParams('')
+  const navigate = useNavigate()
 
-  async function getUsers(pageNumber = 1) {
+  if (window.location && window.location.search) {
+    queryParams = new URLSearchParams(window.location.search)
+  }
+  const [selectedPage, setSelectedPage] = useState(
+    Number(queryParams.get('page')) || 1
+  )
+  async function getUsers() {
     const usersResp = await fetch(
-      `https://reqres.in/api/users/?per_page=3&page=${pageNumber}`
+      `https://reqres.in/api/users/?per_page=3&page=${selectedPage}`
     )
     const usersJson = await usersResp.json()
     console.log('Users Json is', usersJson)
     setLoading(false)
     setAllData(usersJson)
   }
+
   useEffect(() => {
     getUsers()
-  }, [])
+    //Set a query param called page
+    // To set a query Param use set method
+    //(key,value)
+    queryParams.set('page', selectedPage)
+    //Convert These query params to String
+    ///users?page=selectedPage
+    const finalUrl = `${window.location.pathname}?${queryParams.toString()}`
+    navigate(finalUrl)
+  }, [selectedPage])
 
   if (loading) {
     return <h1>Loading...</h1>
@@ -45,8 +63,12 @@ function Users() {
       {getPagesArray().map((page) => {
         return (
           <button
+            style={{
+              border:
+                selectedPage === page ? '3px solid red' : '1px solid black',
+            }}
             onClick={() => {
-              getUsers(page)
+              setSelectedPage(page)
             }}
           >
             {page}

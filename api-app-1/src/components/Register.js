@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 import '../styles.css'
 
 function Register(props) {
@@ -7,6 +8,14 @@ function Register(props) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
+  const { user, setUser } = useContext(UserContext)
+
+  useEffect(() => {
+    console.log('User is', user)
+    if (localStorage.getItem('demo-user')) {
+      navigate('/users')
+    }
+  }, [])
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -46,6 +55,7 @@ function Register(props) {
           if (response.error) {
             setError(response.error)
           } else {
+            localStorage.setItem('demo-user', JSON.stringify(response))
             //Logic to redirect to the users page
             navigate('/users')
           }
